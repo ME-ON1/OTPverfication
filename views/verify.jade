@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1 Item is Valid only for 60 seconds
+    form(action="/verify" method="post")
+        input( name="token" required type="number" placeholder="1234")
+        
+        input(type="submit" value="Verify PIN")
