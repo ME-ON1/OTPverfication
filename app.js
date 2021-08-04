@@ -6,6 +6,10 @@ var logger = require('morgan');
 var http = require('http')
 var SocketIO = require('socket.io')
 
+
+
+/**tets action /
+
 var indexRouter = require('./routes/index');
 
 
