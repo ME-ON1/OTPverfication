@@ -18,6 +18,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
+      - name: checkout 
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
       - name: Run a one-line script
         run: |
           touch ind.js
