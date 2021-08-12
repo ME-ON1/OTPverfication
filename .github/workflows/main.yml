@@ -22,7 +22,6 @@ jobs:
         with:
          ref: ${{ github.head_ref }}
          
-      - uses: actions/checkout@v2
       - name: setup env variable 
       - run: | 
           touch .env 
