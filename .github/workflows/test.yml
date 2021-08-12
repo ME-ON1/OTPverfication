@@ -2,18 +2,13 @@ name: NodeJS with Webpack
 
 on:
   schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '*/5 * * * *'
-
-
+  - cron:  '*/5 * * * *'
+    
 jobs:
   build:
+    name: testing
     runs-on: ubuntu-latest
     
     steps:
       - name: npm install, build and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm test
-      
+        run:  npm install
