@@ -3,23 +3,40 @@ name: NodeJS with Webpack
 on:
 schedule:
   - cron: '*/5 * * * *'
-
+  
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-    
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-
-    - name: Build
+    - name: Create file
       run: |
-        npm install
+        printf "Hello\nWorld\n" > hw.txt
+
+    - name: Create file
+      run: |
+        echo First        > other.txt
+        echo Second Line >> other.txt
+        echo Third       >> other.txt
+
+
+    - name: Show file content
+      run: |
+        pwd
+        ls -la
+        cat hw.txt
+        cat other.txt
+
+
+    - name: Create directory and create file in homedir
+      run: |
+        ls -la ~/
+        mkdir ~/.zorg
+        echo First        > ~/.zorg/home.txt
+        echo Second Line >> ~/.zorg/home.txt
+        echo Third       >> ~/.zorg/home.txt
+        ls -la ~/.zorg/
+
+    - name: Show file content
+      run: |
+        ls -la ~/
+        cat ~/.zorg/home.txt
